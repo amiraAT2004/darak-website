@@ -74,17 +74,7 @@
   margin-bottom: 30px;
 }
 
-@media (max-width: 1200px) {
-  .search-filters {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
 
-@media (max-width: 768px) {
-  .search-filters {
-    grid-template-columns: 1fr;
-  }
-}
 
 .filter-group {
   display: flex;
@@ -138,12 +128,6 @@
   box-shadow: 0 0 0 3px rgba(255, 152, 0, 0.2);
 }
 
-/* تخصيص سهم select للغة العربية */
-.filter-select {
-  direction: rtl;
-  text-align: right;
-}
-
 .search-actions {
   display: flex;
   justify-content: center;
@@ -152,71 +136,6 @@
   padding-top: 30px;
   border-top: 1px solid var(--divider);
 }
-
-.btn-search-advanced {
-  background: linear-gradient(135deg, var(--primary-color) 0%, #1a237e 100%);
-  color: white;
-  padding: 16px 40px;
-  border: none;
-  border-radius: 8px;
-  font-size: 1.1em;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  box-shadow: 0 4px 15px rgba(0, 9, 103, 0.2);
-}
-
-.btn-search-advanced:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 9, 103, 0.3);
-  background: linear-gradient(135deg, #1a237e 0%, var(--primary-color) 100%);
-}
-
-.btn-reset {
-  background-color: white;
-  color: var(--primary-color);
-  padding: 16px 30px;
-  border: 2px solid var(--divider);
-  border-radius: 8px;
-  font-size: 1.1em;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.btn-reset:hover {
-  background-color: #f8f9fa;
-  border-color: var(--primary-color);
-}
-
-/* تصميم خاص لـ select عدد الغرف */
-#bedrooms.filter-select {
-  background-color: #f8f9fa;
-  border-color: #dee2e6;
-}
-
-/* إضافة تأثيرات إضافية */
-.filter-group::after {
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  right: 0;
-  width: 0;
-  height: 2px;
-  background-color: var(--accent-color);
-  transition: width 0.3s ease;
-}
-
-.filter-group:hover::after {
-  width: 100%;
-}
-
 
   /* قسم نتائج البحث */
 
@@ -282,23 +201,6 @@
 .property-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
-
-.property-badge {
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  background-color: var(--primary-color);
-  color: white;
-  padding: 5px 15px;
-  border-radius: 20px;
-  font-size: 0.85em;
-  font-weight: 600;
-  z-index: 2;
-}
-
-.property-badge.sale {
-  background-color: #e74c3c;
 }
 
 .property-image {
@@ -528,6 +430,9 @@
   .properties-grid {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   }
+    .search-filters {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 600px) {
@@ -535,7 +440,9 @@
     flex-direction: column;
     align-items: flex-start;
   }
-  
+    .search-filters {
+    grid-template-columns: 1fr;
+  }
   .results-count {
     width: 100%;
     justify-content: space-between;
@@ -577,20 +484,19 @@
     gap: 15px;
   }
   
-  .btn-search-advanced,
+  .btn-small, .btn-search-advanced,
   .btn-reset {
     width: 100%;
     justify-content: center;
   }
-}
-
-@media (max-width: 600px) {
   .property-footer {
     flex-direction: column;
     gap: 15px;
     align-items: flex-start;
   }
-  
+  .btn-small{
+    text-align: center;
+  }
   .stats-grid {
     grid-template-columns: 1fr;
   }
@@ -618,7 +524,7 @@
     flex-direction: column;
     align-items: flex-start;
   }
-  
+
   .property-title {
     font-size: 1.1em;
   }
